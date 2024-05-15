@@ -1,0 +1,7 @@
+[
+    {"code":"001","prefCode":"002","name":"青森県","citycode":"020000"},
+    {"code":"002","prefCode":"002","name":"岩手県","citycode":"030000"},
+    {"code":"003","prefCode":"002","name":"宮城県","citycode":"040000"},
+    {"code":"004","prefCode":"002","name":"秋田県","citycode":"050000"},
+    {"code":"005","prefCode":"002","name":"山形県","citycode":"060000"},
+    {"code":"006","prefCode":"002","name":"福島県","citycode":"070000"}]

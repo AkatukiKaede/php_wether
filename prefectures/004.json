@@ -1,0 +1,8 @@
+[
+    {"code":"001","prefCode":"004","name":"茨城県","citycode":"080000"},
+    {"code":"002","prefCode":"004","name":"栃木県","citycode":"090000"},
+    {"code":"003","prefCode":"004","name":"群馬県","citycode":"100000"},
+    {"code":"004","prefCode":"004","name":"埼玉県","citycode":"110000"},
+    {"code":"005","prefCode":"004","name":"千葉県","citycode":"120000"},
+    {"code":"006","prefCode":"004","name":"東京都","citycode":"130000"},
+    {"code":"007","prefCode":"004","name":"神奈川県","citycode":"140000"}]

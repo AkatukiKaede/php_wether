@@ -1,0 +1,219 @@
+@charset "UTF-8";
+/* フォント */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap');
+
+/* header */
+/*Josh's Custom CSS Resethttps://www.joshwcomeau.com/css/custom-css-reset/*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box
+}
+
+* {
+    margin: 0
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word
+}
+
+#root,
+#__next {
+    isolation: isolate
+}
+
+body {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    background-color: #fff6f6;
+    color: #333;
+    /* padding-left: 30px; */
+}
+
+a {
+    color: #2ab2b0;
+    text-decoration: none;
+}
+
+
+
+/* ==========================ヘッダー========================== */
+
+#header{
+    padding:30px;
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-bottom: thick double #333;
+    box-shadow: 2px 2px 3px #cbcbcb;
+    /* position:fixed */
+}
+
+/* ==========================メイン========================== */
+
+#main{
+    display: flex;
+    margin-bottom: 40px;
+}
+
+/* ==========================weather========================== */
+
+#weather{
+    /* display: flex; */
+    width: calc(100% - 200px);
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: white;
+    box-shadow: 2px 2px 3px #cbcbcb;
+    padding-bottom: 30px;
+}
+
+
+#weather p{
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+/* ==========================select========================== */
+
+#select {
+    border-radius: 3px;
+}
+
+/* ==========================region========================== */
+
+#region {
+    margin-right:30px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 3px;
+    font-size: 20px;
+}
+
+/* ==========================prefs========================== */
+
+#prefs {
+    margin-right:30px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 3px;
+    font-size: 20px;
+    margin-bottom: 20px
+}
+
+/* ==========================sidebar========================== */
+
+#sidebar{
+    position: sticky;
+    display: block ;
+    width: 200px;
+    margin-left: 30px;
+    background-color: white;
+    box-shadow: 2px 2px 3px #cbcbcb;
+
+
+}
+#sidebar h3{
+    margin-top: 10px;
+    text-align: center;
+}
+#sidebar p{
+    font-size: 13px;
+    padding: 10px;
+}
+
+
+/* ==========================selectarea========================== */
+
+#selectarea{
+    display: flex;
+    border-top: thick double #2ab2b0;
+    border-bottom:1px dashed #2ab2b0;
+
+}
+
+#selectarea p{
+    margin-top: 20px;
+}
+
+/* ==========================weatherprev========================== */
+
+#weatherprev{
+    display: flex;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+/* ==========================iconheader========================== */
+
+#iconheader h2{
+    display: inline-block ;
+}
+
+#iconheader{
+    width: 20%;
+ }
+
+#iconheader img{
+    margin: 10px;
+    padding: 10px;
+    width: 50%;
+    height: auto;
+}
+
+/* ==========================info========================== */
+
+#info li{
+    /* margin-left: 20px; */
+    list-style: none;
+    margin-left: -60px;
+}
+
+/* ==========================footer========================== */
+
+#footer{
+    position: fixed;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    border-top: thick double #333;
+    /* box-shadow: 2px 0px 3px 3px #cbcbcb; */
+
+}
