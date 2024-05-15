@@ -1,10 +1,10 @@
 [
-    {"code":"001","prefCode":"003","name":"新潟県","citycode":"150000"},
-    {"code":"002","prefCode":"003","name":"富山県","citycode":"160000"},
-    {"code":"003","prefCode":"003","name":"石川県","citycode":"170000"},
-    {"code":"004","prefCode":"003","name":"福井県","citycode":"180000"},
-    {"code":"005","prefCode":"003","name":"山梨県","citycode":"190000"},
-    {"code":"006","prefCode":"003","name":"長野県","citycode":"200000"},
-    {"code":"007","prefCode":"003","name":"岐阜県","citycode":"210000"},
-    {"code":"008","prefCode":"003","name":"静岡県","citycode":"220000"},
-    {"code":"009","prefCode":"003","name":"愛知県","citycode":"230000"}]
+    {"code":"001","prefCode":"003","name":"新潟県","prefcode":"150000"},
+    {"code":"002","prefCode":"003","name":"富山県","prefcode":"160000"},
+    {"code":"003","prefCode":"003","name":"石川県","prefcode":"170000"},
+    {"code":"004","prefCode":"003","name":"福井県","prefcode":"180000"},
+    {"code":"005","prefCode":"003","name":"山梨県","prefcode":"190000"},
+    {"code":"006","prefCode":"003","name":"長野県","prefcode":"200000"},
+    {"code":"007","prefCode":"003","name":"岐阜県","prefcode":"210000"},
+    {"code":"008","prefCode":"003","name":"静岡県","prefcode":"220000"},
+    {"code":"009","prefCode":"003","name":"愛知県","prefcode":"230000"}]

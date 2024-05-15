@@ -1,8 +1,8 @@
 [
-    {"code":"001","prefCode":"005","name":"三重県","citycode":"240000"},
-    {"code":"002","prefCode":"005","name":"滋賀県","citycode":"250000"},
-    {"code":"003","prefCode":"005","name":"京都府","citycode":"260000"},
-    {"code":"004","prefCode":"005","name":"大阪府","citycode":"270000"},
-    {"code":"005","prefCode":"005","name":"兵庫県","citycode":"280000"},
-    {"code":"006","prefCode":"005","name":"奈良県","citycode":"290000"},
-    {"code":"007","prefCode":"005","name":"和歌山県","citycode":"300000"}]
+    {"code":"001","prefCode":"005","name":"三重県","prefcode":"240000"},
+    {"code":"002","prefCode":"005","name":"滋賀県","prefcode":"250000"},
+    {"code":"003","prefCode":"005","name":"京都府","prefcode":"260000"},
+    {"code":"004","prefCode":"005","name":"大阪府","prefcode":"270000"},
+    {"code":"005","prefCode":"005","name":"兵庫県","prefcode":"280000"},
+    {"code":"006","prefCode":"005","name":"奈良県","prefcode":"290000"},
+    {"code":"007","prefCode":"005","name":"和歌山県","prefcode":"300000"}]

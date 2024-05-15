@@ -1,10 +1,10 @@
 <?php
-// cookieからcitycodeを取り出す
-$citycode=$_COOKIE["citycode"];
+// cookieからprefcodeを取り出す
+$prefcode=$_COOKIE["prefcode"];
 // 今日の日付を取得
 $today=date("Y-m-d") ;
 // 日付を取得→db内に格納されている日付と比較してその天気が今日のものかを比較
-// citycodeはdb内のキーなのでcookieで取得する
+// prefcodeはdb内のキーなのでcookieで取得する
 
 // db接続のための変数格納
 // $dsn = 'mysql304.phy.lolipop.lan';
@@ -16,8 +16,8 @@ try {
   // db接続
     $dbh = new PDO($dsn, $username, $password);
       
-    // sql文でcitycodeが一致するデータを取りだす
-    $sql = "SELECT * FROM weather WHERE citycode =" . $citycode . "";
+    // sql文でprefcodeが一致するデータを取りだす
+    $sql = "SELECT * FROM weather WHERE prefcode =" . $prefcode . "";
     $sth = $dbh->prepare($sql);
     // sql文の実行
     $sth->execute();
@@ -28,14 +28,14 @@ try {
 
         $date=strval($row['date']);
         $weather=$row['today_weather'];
-        $tempsMax=$row['tempsmax'];
-        $tempsMin=$row['tempsmin'];
+        $tempmax=$row['tempmax'];
+        $tempmin=$row['tempmin'];
     }
 
     // db内のデータと$today(今日の日付)が一致してない場合、気象庁のapiから天気を取得→dbに格納
         if ($today!==$date){
           //気象庁のAPIにて気象情報取得
-          $url = "https://www.jma.go.jp/bosai/forecast/data/forecast/".$citycode.".json";
+          $url = "https://www.jma.go.jp/bosai/forecast/data/forecast/".$prefcode.".json";
           $weather_json = file_get_contents($url);
           $weather_array = json_decode($weather_json, true);
 
@@ -44,14 +44,14 @@ try {
           // $weather_iconは抽出した天気から最初の天気の文言のみ抽出(晴れ、くもり、雨、雪のみ)
           $dated = $weather_array["0"]["timeSeries"]["0"]["timeDefines"]["0"];
           $weather = $weather_array["0"]["timeSeries"]["0"]["areas"]["0"]["weathers"]["0"];
-          $tempsMax = $weather_array["1"]['timeSeries']["1"]['areas']["0"]['tempsMax']["1"];
-          $tempsMin = $weather_array["1"]['timeSeries']["1"]['areas']["0"]['tempsMin']["1"];
+          $tempmax = $weather_array["1"]['timeSeries']["1"]['areas']["0"]['tempsMax']["1"];
+          $tempmin = $weather_array["1"]['timeSeries']["1"]['areas']["0"]['tempsMin']["1"];
           $weather_icon = mb_split("　", $weather);
           
           // 抽出した天気をdbに格納
           $sql="UPDATE weather 
-          SET date='".$today."', today_weather='".$weather."', tempsmax='".$tempsMax."', tempsmin='".$tempsMin."'
-          WHERE citycode='".$citycode."'";
+          SET date='".$today."', today_weather='".$weather."', tempmax='".$tempmax."', tempmin='".$tempmin."'
+          WHERE prefcode='".$prefcode."'";
           ;
           $sth = $dbh->prepare($sql);
           $sth->execute();
@@ -61,8 +61,8 @@ try {
         $weather_icon = mb_split("　", $weather);
         setcookie("dated",$dated);
         setcookie("weather",$weather);
-        setcookie("tempsmax",$tempsMax);
-        setcookie("tempsmin",$tempsMin);
+        setcookie("tempmax",$tempmax);
+        setcookie("tempmin",$tempmin);
         setcookie("weather_icon",$weather_icon[0]);
   } catch (PDOException $e) {
     echo  "<p>Failed : " . $e->getMessage()."</p>";

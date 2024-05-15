@@ -1,6 +1,6 @@
 [
-    {"code":"001","prefCode":"006","name":"鳥取県","citycode":"310000"},
-    {"code":"002","prefCode":"006","name":"島根県","citycode":"320000"},
-    {"code":"003","prefCode":"006","name":"岡山県","citycode":"330000"},
-    {"code":"004","prefCode":"006","name":"広島県","citycode":"340000"},
-    {"code":"005","prefCode":"006","name":"山口県","citycode":"350000"}]
+    {"code":"001","prefCode":"006","name":"鳥取県","prefcode":"310000"},
+    {"code":"002","prefCode":"006","name":"島根県","prefcode":"320000"},
+    {"code":"003","prefCode":"006","name":"岡山県","prefcode":"330000"},
+    {"code":"004","prefCode":"006","name":"広島県","prefcode":"340000"},
+    {"code":"005","prefCode":"006","name":"山口県","prefcode":"350000"}]

@@ -3,11 +3,11 @@ const prefsElement = document.getElementById("prefs");
 
 // cookieから取り出すための変数定義
 let weather;
-let tempsmax;
-let tempsmin;
+let tempmax;
+let tempmin;
 let weather_icon;
 let prefname;
-let citycode;
+let prefcode;
 
 // セレクトボックス変更の感知
 prefsElement.addEventListener("change", (event) => {
@@ -17,17 +17,17 @@ prefsElement.addEventListener("change", (event) => {
     prefsElement = document.getElementById("prefs");
     // セレクトボックスのvalueを取得(jsonのcodeを取得するため)
     const PrefCode = "00" + String(`${prefsElement.value[(0, 2)]}`);
-    // 取得したcodeからcitycodeを取り出すためにjsonファイルを指定
+    // 取得したcodeからprefcodeを取り出すためにjsonファイルを指定
     const PrefsResponce = await fetch("./prefectures/" + PrefCode + ".json");
     // jsonファイルの読み取り
     const Prefs = await PrefsResponce.json();
     // jsonファイルの行数指定するためにもう一つのvalueを読みとり
     const Prefcode1 = parseInt("00" + String(`${prefsElement.value[(0, 6)]}`));
-    // jsonファイルから都道府県名とcitycodeを取得
-    citycode = `${Prefs[Prefcode1 - 1].citycode}`;
+    // jsonファイルから都道府県名とprefcodeを取得
+    prefcode = `${Prefs[Prefcode1 - 1].prefcode}`;
     prefname = `${Prefs[Prefcode1 - 1].name}`;
-    // citycodeをcookieに保存
-    document.cookie = "citycode=" + citycode; // key=value
+    // prefcodeをcookieに保存
+    document.cookie = "prefcode=" + prefcode; // key=value
     // fetchdataの起動
     fetchData();
   };
@@ -35,7 +35,7 @@ prefsElement.addEventListener("change", (event) => {
 });
 
 // メインとなるindex.phpとは別にDBを操作するためのdb.phpを動かすための関数
-// citycodeを取得後でないと動かないためJSから起動
+// prefcodeを取得後でないと動かないためJSから起動
 async function fetchData() {
   try {
     // PHPファイルを非同期で取得
@@ -54,8 +54,8 @@ async function fetchData() {
     <div id="info">
     <ul> 
     <li><p>天気:${weather}</p></li><br>
-    <li><p>最高気温:${tempsmax}</p></li><br>
-    <li><p>最低気温:${tempsmin}</p></li>
+    <li><p>最高気温:${tempmax}</p></li><br>
+    <li><p>最低気温:${tempmin}</p></li>
     </ul>
     </div>
 `;
@@ -91,14 +91,14 @@ function decodeCookies() {
 
     // 取り出したcookieを変数に格納するためにswitch文を使用
     switch (decodedName) {
-      case "tempsmax":
-        tempsmax = decodedValue;
+      case "tempmax":
+        tempmax = decodedValue;
         break;
       case "weather":
         weather = decodedValue;
         break;
-      case "tempsmin":
-        tempsmin = decodedValue;
+      case "tempmin":
+        tempmin = decodedValue;
         break;
       case "weather_icon":
         weather_icon = decodedValue;
